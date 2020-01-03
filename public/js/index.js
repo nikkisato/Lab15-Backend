@@ -3,19 +3,18 @@ const root = document.getElementById('root');
 const displayForm = () => {
   const form = document.createElement('form');
   form.innerHTML = `
-    <fieldset>
-        <legend>Signup</legend>
-        <input name="email" type="text" placeholder="email"> 
-        <input name="password" type="password" placeholder="password"> 
-        </input>
-
-    </fieldset>
-    <button> Signup </button>
-    `;
+<fieldset>
+  <legend>Signup</legend>
+  <input name="email" type="text" placeholder="email">
+  <input name="password" type="password" placeholder="password">
+</fieldset>
+<button>Signup</button>
+`;
 
   form
     .addEventListener('submit', event => {
       event.preventDefault();
+
       const formData = new FormData(event.target);
 
       const user = {
@@ -33,12 +32,11 @@ const displayForm = () => {
         .then(res => res.json())
         .then(() => {
           window.location.reload();
-
         });
     });
-  root.appendChild(form); 
-};
 
+  root.appendChild(form);
+};
 
 const displayUser = user => {
   const h1 = document.createElement('h1');
@@ -50,7 +48,6 @@ const displayUser = user => {
 fetch('/api/v1/auth/verify', {
   credentials: 'include'
 })
-
   .then(res => res.json())
   .then(user => {
     if(user._id) {
@@ -59,3 +56,5 @@ fetch('/api/v1/auth/verify', {
       displayForm();
     }
   });
+
+  
