@@ -3,10 +3,15 @@ const root = document.getElementById('root');
 const displayForm = () => {
   const form = document.createElement('form');
   form.innerHTML = `
+
 <fieldset>
   <legend>Signup</legend>
-  <input name="email" type="text" placeholder="email">
-  <input name="password" type="password" placeholder="password">
+  Name: 
+  <input name="name" type="text" >
+  <br>
+  Email:<input name="email" type="text" >
+  <br>
+  Password:<input name="password" type="password" >
 </fieldset>
 <button>Signup</button>
 `;
@@ -18,6 +23,7 @@ const displayForm = () => {
       const formData = new FormData(event.target);
 
       const user = {
+        name: formData.get('name'),
         email: formData.get('email'),
         password: formData.get('password')
       };
@@ -40,7 +46,7 @@ const displayForm = () => {
 
 const displayUser = user => {
   const h1 = document.createElement('h1');
-  h1.textContent = user.email;
+  h1.textContent = user.name;
 
   root.appendChild(h1);
 };

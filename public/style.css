@@ -1,11 +1,13 @@
-h1 {
-    animation: blink 5s linear ;
-  }
-  @keyframes blink {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
+.fieldset{
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.root {
+    margin-left:auto;
+    margin-right:auto;
+}
+.form {
+    margin-left:auto;
+    margin-right:auto;
+}
