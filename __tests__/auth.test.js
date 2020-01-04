@@ -52,15 +52,15 @@ describe('app routes', () => {
       });
   });
 
+
   it('fails to login a user with a bad username', async() => {
     await User.create({
       username: 'test@test.com',
       password: 'password'
     });
-
     return request(app)
       .post('/api/v1/auth/login')
-      .send({ username: 'bad@notgood.com', password: 'password' })
+      .send({ username: 'Fail', password: 'password' })
       .then(res => {
         expect(res.status).toEqual(401);
         expect(res.body).toEqual({
@@ -110,4 +110,5 @@ describe('app routes', () => {
         });
       });
   });
+
 });
