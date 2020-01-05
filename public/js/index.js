@@ -13,7 +13,7 @@ const displayForm = () => {
   <br>
   Password:<input name="password" type="password" >
 </fieldset>
-<button>Signup</button>
+<button href="button.html">Signup</button>
 `;
 
   form
@@ -46,7 +46,7 @@ const displayForm = () => {
 
 const displayUser = user => {
   const h1 = document.createElement('h1');
-  h1.textContent = user.name;
+  h1.textContent = user.email;
 
   root.appendChild(h1);
 };
